@@ -1,0 +1,22 @@
+head 
+    - var title = "Assignment 1 Personal Page"
+    title #{title}
+body 
+
+    a(href="/") Home
+    h1(style='text-align:center') #{title}
+
+    include partials/searchbox
+
+    ol
+        each result in topResults
+            li #{result.title}
+                ul
+                    li Original Url: 
+                        a(href=result.url) #{result.url} 
+                    li Search Score: #{result.score}
+                    li Page Rank: #{result.pageRank}
+                    li Link Data: 
+                        a(href="/personal/"+result.id) #{result.id}
+
+

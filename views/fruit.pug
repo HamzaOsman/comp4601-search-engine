@@ -1,0 +1,24 @@
+head 
+    - var title = `${page.title}`
+    title #{title}
+body 
+    h1(style='text-align:center') #{title}
+
+    ul
+        li Original Url: 
+            a(href=page.url) #{page.url} 
+        li Title: #{page.title}
+        li Incoming Links
+            ul
+                each link in page.incomingLinks 
+                    li 
+                        a(href=link) #{link}
+        li Outgoing Links
+            ul
+                each link in page.outgoingLinks 
+                    li 
+                        a(href=link) #{link}
+        li Freqs
+            ul
+                each fruit in freqs 
+                    li #{fruit}

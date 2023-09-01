@@ -1,0 +1,12 @@
+div#search-box(style='border-style:solid;width:350px;margin:auto;text-align:center')
+        h3 Search Box
+        form(action="", method="get") 
+            input(type="search", name="q" placeholder="Enter search query here...")
+            br
+            input(type="checkbox", name="boost" value="true") 
+            | Include PageRank Boost
+            br 
+            | Limit Search Results: 
+            input(type="number", name="limit" value="10" placeholder="Limit" min=1, max=50 style='width:50px')     
+            br
+            input(type="submit", value="Search")

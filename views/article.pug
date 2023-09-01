@@ -1,0 +1,24 @@
+head 
+    - var title = `${article.headLine}`
+    title #{title}
+body 
+    h1(style='text-align:center') #{title}
+
+    ul
+        li Original Url: 
+            a(href=article.url) #{article.url} 
+        li Title: #{title}
+        li Incoming Links
+            ul
+                each link in article.incomingLinks 
+                    li 
+                        a(href=link) #{link}
+        li Outgoing Links
+            ul
+                each link in article.outgoingLinks 
+                    li 
+                        a(href=link) #{link}
+        li Freqs
+            ul
+                each word in freqs 
+                    li #{word[0]}: #{word[1]}
